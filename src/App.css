@@ -21,7 +21,10 @@
   /* background-color: #fff; */
   box-shadow: 0 0 10px rgb(36, 181, 234);
   border-radius: 10px;
+  transition: width 2s ease-in;
+  transition: height 2s ease-in;
 }
+
 
 ul {
   list-style-type: none;
@@ -34,6 +37,8 @@ li {
 
 .pagination {
   margin-top: 20px;
+  justify-content: flex-end;
+  
 }
 
 .pagination button {
@@ -54,8 +59,8 @@ li {
   /* position: fixed; */
   top: calc(50vh - 16px);
   /* Half of button height */
+  justify-content: center;
   display: flex;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -79,6 +84,11 @@ li {
 .disabled {
   filter: blur(2px);
   cursor: not-allowed;
+}
+
+.pagination_container{
+  display: flex;
+  justify-content: space-around;
 }
 
 

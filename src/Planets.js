@@ -101,6 +101,9 @@ const Planets = () => {
         )}
       </div>
 
+
+
+    {/* <div className='pagination_container'> */}
       <div className="pagination">
         {prevPage !== null && (
           <button onClick={handlePrev} className="prev-button">
@@ -113,7 +116,8 @@ const Planets = () => {
           </button>
         )}
       </div>
-    </div>
+      </div>
+    // </div>
   );
 };
 
