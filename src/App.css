@@ -38,7 +38,7 @@ li {
 .pagination {
   margin-top: 20px;
   justify-content: flex-end;
-  
+
 }
 
 .pagination button {
@@ -54,11 +54,10 @@ li {
   background-color: #45a049;
 }
 
-/* Add these styles to your CSS */
+
 .pagination {
-  /* position: fixed; */
+
   top: calc(50vh - 16px);
-  /* Half of button height */
   justify-content: center;
   display: flex;
   width: 100%;
@@ -68,9 +67,7 @@ li {
 .next-button {
   position: relative;
   width: 100px;
-  /* Adjust the width as needed */
   height: 32px;
-  /* Adjust the height as needed */
 }
 
 .prev-button {
@@ -86,20 +83,13 @@ li {
   cursor: not-allowed;
 }
 
-.pagination_container{
+.pagination_container {
   display: flex;
   justify-content: space-around;
 }
 
-
-/* .planets-container {
-  display: flex;
-  flex-wrap: wrap;
+.loading-planets {
+  font-size: x-large;
+  font-weight: 700;
+  color: #45a049;
 }
-
-.planet-card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin: 10px;
-  width: 200px;
-} */

@@ -14,11 +14,10 @@ const Planets = () => {
       try {
         setLoadingPlanets(true);
         const response = await axios.get(`https://swapi.dev/api/planets/?page=${page}&format=json`);
+        console.log(response.data);
         setPlanets(response.data.results);
         setNextPage(response.data.next);
         setPrevPage(response.data.previous);
-
-        // Fetch residents for each planet
         setLoadingResidents(true);
         const planetsWithResidents = await Promise.all(
           response.data.results.map(async (planet) => {
@@ -71,7 +70,10 @@ const Planets = () => {
       <h1>Star Wars Planets</h1>
       <div className="planets-container">
         {loadingPlanets ? (
-          <img src="/icons8-in-progress.gif" alt="Loading planets..." />
+          <div >
+           <p className='loading-planets'> Please wait while we load the planets...    <img src="/icons8-in-progress.gif" alt="Loading planets..." /></p>
+          
+          </div>
         ) : (
           planets.map((planet, index) => (
             <div key={index} className="planet-card">
@@ -82,7 +84,11 @@ const Planets = () => {
 
               <h3>Residents:</h3>
               {loadingResidents ? (
+                <div>
+                Please wait while we load the Planet's residents...
+                <br/>
                 <img src="/icons8-in-progress.gif" alt="Loading residents..." />
+                </div>
               ) : (
                 <ul>
                   {planet.residents && planet.residents.length > 0 ? (
@@ -103,7 +109,6 @@ const Planets = () => {
 
 
 
-    {/* <div className='pagination_container'> */}
       <div className="pagination">
         {prevPage !== null && (
           <button onClick={handlePrev} className="prev-button">
@@ -117,7 +122,6 @@ const Planets = () => {
         )}
       </div>
       </div>
-    // </div>
   );
 };
 
